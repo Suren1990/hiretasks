@@ -1,0 +1,19 @@
+header {
+    display: flex;
+    justify-content: center;
+    column-gap: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #000;
+
+    a {
+        color: rgba(#fff, 0.75);
+        transition: color 240ms;
+        text-decoration: none;
+
+        &:hover,
+        &.active {
+            color: rgba(#fff, 1);
+        }
+    }
+}

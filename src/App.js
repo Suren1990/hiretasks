@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Header from "./Components/Header/Header";
+import CounterContext from "./context";
+import Routing from "./Routing";
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [value, setValue] = useState("");
+  const [lists, setLists] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CounterContext.Provider value={{ count, setCount, value, setValue, lists, setLists }}>
+      <div className="App">
+        <Header />
+        <main className="main">
+          <h1>Here are only 2 tasks</h1>
+          <Routing />
+        </main>
+      </div>
+    </CounterContext.Provider>
   );
 }
 
